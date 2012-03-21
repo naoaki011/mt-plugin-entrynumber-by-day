@@ -1,0 +1,10 @@
+name: EntryNumber By Day
+id: EntryNumberByDay
+description: <__trans phrase='Output number of published order in same day.'>
+version: 0.2
+author_name: Junnama Noda
+
+applications:
+tags:
+  function:
+    EntryNumberByDay: $EntryNumberByDay::EntryNumberByDay::Tags::_handler_entry_number_by_day

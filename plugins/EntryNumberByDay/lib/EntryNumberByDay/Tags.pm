@@ -1,4 +1,4 @@
-package MT::Plugin::EntryNumberByDay;
+package EntryNumberByDay::Tags;
 use strict;
 use MT;
 use MT::Plugin;
@@ -8,34 +8,6 @@ use MT::Entry;
 use MT::Plugin;
 
 use MT::Util qw( start_end_day );
-
-our $VERSION = '0.2';
-
-use base qw( MT::Plugin );
-
-@MT::Plugin::EntryNumberByDay::ISA = qw(MT::Plugin);
-
-my $plugin = new MT::Plugin::EntryNumberByDay({
-	id => 'EntryNumberByDay',
-	key => 'EntryNumberByDay',
-	description => 'EntryNumberByDay',
-	name => 'EntryNumber By Day',
-	author_name => 'Junnama Noda',
-	'version' => $VERSION,
-});
-
-MT->add_plugin($plugin);
-
-sub init_registry {
-	my $plugin = shift;
-	$plugin->registry({
-		tags => {
-			function => {
-				'EntryNumberByDay' => \&_handler_entry_number_by_day,
-			},
-		},
-	});
-}
 
 sub _handler_entry_number_by_day {
 	my ($ctx, $args, $cond) = @_;
