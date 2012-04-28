@@ -16,8 +16,8 @@ sub _handler_entry_number_by_day {
 	my $blog = $ctx->stash('blog');
 	my $entry = $ctx->stash('entry');
 	my $prefix = $args->{prefix} || '';
-	my $pad = $args->{zeropad};
-	my $always = $args->{always};
+	my $pad = $args->{zeropad} || 0;
+	my $always = $args->{always} || 0;
 	my $blog_id = $blog->id;
 	my $ts = $entry->authored_on;
 	my ($start,$end) = start_end_day($ts);
