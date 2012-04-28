@@ -1,10 +1,11 @@
 name: EntryNumber By Day
 id: EntryNumberByDay
 description: <__trans phrase='Output number of published order in same day.'>
-version: 0.2
-author_name: Junnama Noda
+version: 0.3
+author_name: naoaki.onozaki (original author Junnama Noda.)
+plugin_link: https://github.com/naoaki011/mt-plugin-entrynumber-by-day
+l10n_class: EntryNumberByDay::L10N
 
-applications:
 tags:
   function:
     EntryNumberByDay: $EntryNumberByDay::EntryNumberByDay::Tags::_handler_entry_number_by_day
