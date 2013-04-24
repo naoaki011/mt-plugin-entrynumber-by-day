@@ -9,3 +9,4 @@ l10n_class: EntryNumberByDay::L10N
 tags:
   function:
     EntryNumberByDay: $EntryNumberByDay::EntryNumberByDay::Tags::_handler_entry_number_by_day
+    EntryNumberByDayOnCategory: $EntryNumberByDay::EntryNumberByDay::Tags::_handler_entry_number_on_category
