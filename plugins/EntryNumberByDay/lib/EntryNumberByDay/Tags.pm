@@ -17,15 +17,15 @@ sub _handler_entry_number_by_day {
 	my $blog_id = $blog->id;
 	my $ts = $entry->authored_on;
 	my ($start,$end) = start_end_day($ts);
-	$end++;
-	$start--;
+	#$end++;
+	#$start--;
 	my @entries = MT->model('entry')->load( {
 										blog_id => $blog_id,
 										status  => MT::Entry::RELEASE(),
 										authored_on => [$start, $end],
 									},
 									{
-										range  => { authored_on => 1 },
+										range_incl  => { authored_on => 1 },
 										sort => 'authored_on',
 										direction => 'ascend',
 									});
@@ -68,8 +68,8 @@ sub _handler_entry_number_on_category {
 	my $blog_id = $blog->id;
 	my $ts = $entry->authored_on;
 	my ($start,$end) = start_end_day($ts);
-	$end++;
-	$start--;
+	#$end++;
+	#$start--;
 	my @entries;
 	if ($category) {
 		@entries = MT->model('entry')->load( {
@@ -78,7 +78,7 @@ sub _handler_entry_number_on_category {
 											authored_on => [$start, $end],
 										},
 										{
-											range  => { authored_on => 1 },
+											range_incl  => { authored_on => 1 },
 											sort => 'authored_on',
 											direction => 'ascend',
 											join => MT->model('placement')->join_on(
@@ -94,7 +94,7 @@ sub _handler_entry_number_on_category {
 										authored_on => [$start, $end],
 									},
 									{
-										range  => { authored_on => 1 },
+										range_incl  => { authored_on => 1 },
 										sort => 'authored_on',
 										direction => 'ascend',
 										join => MT->model('placement')->join_on(
